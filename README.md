@@ -1,6 +1,6 @@
 # vue-cli
 
-> A Vue.js project
+> FX Trading App
 
 ## Build Setup
 
