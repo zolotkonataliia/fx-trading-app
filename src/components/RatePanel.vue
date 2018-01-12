@@ -88,6 +88,8 @@ export default {
   }
   &__sell,
   &__buy {
+    $block: &;
+
     float: left;
     width: 48%;
     min-width: 110px;
@@ -127,6 +129,19 @@ export default {
       transform: rotate(45deg);
       border-radius: 0 10px 0 0;
     }
+    &:hover {
+      color: #fff;
+      #{$block}__inner {
+        border-color: blue;
+        border-width: 2px 2px 2px 0;
+        background-color: green;
+      }
+      &:after {
+        background-color: red;
+        border-color: blue;
+        border-width: 2px 2px 0 0;
+      }
+    }
   }
   &__buy {
     float: right;
@@ -141,7 +156,22 @@ export default {
       right: auto;
       border-width: 0 0 1px 1px;
       border-radius: 0 0 0 10px;
-      height: 30px;
+    }
+    &:hover {
+      &:after {
+        background-color: green;
+        border-width: 0 0 2px 2px;
+      }
+    }
+  }
+  &__sell {
+    $block: &;
+    &:hover {
+      #{$block}__inner {
+        border-color: blue;
+        background-color: red;
+        border-width: 2px 0 2px 2px;
+      }
     }
   }
 }
